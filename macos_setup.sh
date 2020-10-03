@@ -109,12 +109,12 @@ DeveloperUtilitiesList=(
 )
 CaskDeveloperUtilitiesList=(
     cheatsheet
-    spectacle
+    rectangle
     postman
-    dotnet-sdk
+    # dotnet-sdk
     wireshark
-    # google-chrome-canary
-    # firefox-developer-edition
+    google-chrome-canary
+    firefox-developer-edition
 )
 if [ "$DeveloperUtilities" != "${DeveloperUtilities#[Yy]}" ] ;then
     
@@ -157,9 +157,10 @@ DatabaseToolList=(
 )
 CaskDatabaseToolList=(
     pgadmin4
+    postico
     studio-3t
     graphiql
-    azure-data-studio
+    # azure-data-studio
 )
 if [ "$Database" != "${Database#[Yy]}" ] ;then
     echo Yes
@@ -177,9 +178,10 @@ echo -n "Do you wish to install IDEs (${bold}${green}y${reset}/${bold}${red}n${r
 read IDEs
 
 CaskIDEsList=(
-    visual-studio-code
-    intellij-idea
-    visual-studio
+    # visual-studio-code
+    # intellij-idea
+    pycharm-ce
+    # visual-studio
     android-studio
 )
 if [ "$IDEs" != "${IDEs#[Yy]}" ] ;then
@@ -198,23 +200,23 @@ read DevOps
 
 
 DevOpsToolList=(
-    terraform
+    # terraform
     vault
-    consul
-    nomad
-    packer
-    terragrunt
-    ansible
+    # consul
+    # nomad
+    # packer
+    # terragrunt
+    # ansible
     awscli
     aws-sam-cli
     kompose
 )
 CaskDevOpsToolList=(
-    vagrant
-    vmware-fusion
-    virtualbox
+    # vagrant
+    # vmware-fusion
+    # virtualbox
     docker
-    vagrant-manager
+    # vagrant-manager
 )
 if [ "$DevOps" != "${DevOps#[Yy]}" ] ;then
     echo Yes
@@ -253,12 +255,13 @@ read Productivity
 
 CaskProductivityToolList=(
     slack
-    evernote
-    the-unarchiver
+    # evernote
+    # the-unarchiver
+    keka
     dash
     gpg-suite
-    microsoft-teams
-    microsoft-office
+    # microsoft-teams
+    # microsoft-office
     zoomus
 )
 if [ "$Productivity" != "${Productivity#[Yy]}" ] ;then
@@ -278,11 +281,11 @@ MacApplicationToolList=(
     409183694 # Keynote
     409203825 # Numbers
     409201541 # Pages
-    497799835 # Xcode
-    1450874784 # Transporter
-    1274495053 # Microsoft To Do
-    1295203466 # Microsoft Remote Desktop 10
-    985367838 # Microsoft Outlook
+    # 497799835 # Xcode
+    # 1450874784 # Transporter
+    # 1274495053 # Microsoft To Do
+    # 1295203466 # Microsoft Remote Desktop 10
+    # 985367838 # Microsoft Outlook
 )
 if [ "$MacApplication" != "${MacApplication#[Yy]}" ] ;then
     brew install mas
@@ -302,28 +305,28 @@ beginDeploy "############# CLEANING HOMEBREW #############"
 brew cleanup
 
 beginDeploy "############# GLOBAL GIT CONFIG #############"
-sh -c 'curl -s https://raw.githubusercontent.com/maxyermayank/developer-mac-setup/master/.gitignore >> ~/.gitignore'
-git config --global push.default current
-git config --global core.excludesfile ~/.gitignore
-git config --global user.name "<username>"
-git config --global user.email <email>
+# sh -c 'curl -s https://raw.githubusercontent.com/maxyermayank/developer-mac-setup/master/.gitignore >> ~/.gitignore'
+# git config --global push.default current
+# git config --global core.excludesfile ~/.gitignore
+git config --global user.name "Kamogelo Sebopelo"
+git config --global user.email kamogelo
 git config --global color.branch auto
 git config --global color.diff auto
 git config --global color.interactive auto
 git config --global color.status auto
 
-beginDeploy "############# ALIASES #############"
-beginDeploy "############# GIT ALIASES #############"
-sh -c 'curl -s https://raw.githubusercontent.com/maxyermayank/developer-mac-setup/master/.git_aliases >> ~/.git_aliases'
-source ~/.git_aliases
+# beginDeploy "############# ALIASES #############"
+# beginDeploy "############# GIT ALIASES #############"
+# sh -c 'curl -s https://raw.githubusercontent.com/maxyermayank/developer-mac-setup/master/.git_aliases >> ~/.git_aliases'
+# source ~/.git_aliases
 
-beginDeploy "############# DOCKER ALIASES #############"
-sh -c 'curl -s https://raw.githubusercontent.com/maxyermayank/developer-mac-setup/master/.docker_aliases >> ~/.docker_aliases'
-source ~/.docker_aliases
+# beginDeploy "############# DOCKER ALIASES #############"
+# sh -c 'curl -s https://raw.githubusercontent.com/maxyermayank/developer-mac-setup/master/.docker_aliases >> ~/.docker_aliases'
+# source ~/.docker_aliases
 
-beginDeploy "############# K8s ALIASES #############"
-sh -c 'curl -s https://raw.githubusercontent.com/maxyermayank/developer-mac-setup/master/.kubectl_aliases >> ~/.kubectl_aliases'
-source ~/.kubectl_aliases
+# beginDeploy "############# K8s ALIASES #############"
+# sh -c 'curl -s https://raw.githubusercontent.com/maxyermayank/developer-mac-setup/master/.kubectl_aliases >> ~/.kubectl_aliases'
+# source ~/.kubectl_aliases
 
 beginDeploy "############# SETUP BASH PROFILE #############"
 source ~/.bash_profile
